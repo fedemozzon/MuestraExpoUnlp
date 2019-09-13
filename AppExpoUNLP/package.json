@@ -10,6 +10,7 @@
   "dependencies": {
     "expo": "^34.0.1",
     "native-base": "^2.13.8",
+    "permission_aware_react_native_component": "^1.4.3",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
