@@ -39,7 +39,7 @@ class ResumenContainer extends Component {
         <Text style={styles.aditionalText}>Y de este humor: </Text>
         <Image style={styles.image} source={imageSrc} />
         <View style={{flex:2, justifyContent: "center", alignItems: "center"}}>
-          <Button onPress={() => this.props.navigation.popToTop()} title="Finalizar"/>
+          <Button color="#7cb342" onPress={() => this.props.navigation.popToTop()} title="Finalizar"/>
         </View>
       </View>
     )
