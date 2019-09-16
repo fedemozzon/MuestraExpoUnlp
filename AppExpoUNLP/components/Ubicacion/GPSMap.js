@@ -1,67 +1,102 @@
 import React, { Component } from 'react'
-import { View, StyleSheet } from 'react-native'
-import { Constants, MapView } from 'expo'
+import { View, StyleSheet, Button, Text } from 'react-native'
+import MapView from 'react-native-maps'
+import DialogInput from 'react-native-dialog-input'
+import * as Location from 'expo-location'
 
-export default class GPSMap extends Component {
+export default class ManualMap extends Component {
   
   state = {
     mapRegion: { latitude: -34.00000, longitude: -64.00000, latitudeDelta: 0.5, longitudeDelta: 0.5 },
     location: null,
-    mapVisible: true,
+    isDialogVisible: false,
   }
 
-  _getLocationAsync = async () => await Location.getCurrentPositionAsync({})
+  componentDidMount = () => this._setLocation()
   
-  _setLocation = location => this.setState({
-    mapRegion:({...this.state.mapRegion,...location.coords}),
-    location
-  })
+  _getLocation = async () => await Location.getCurrentPositionAsync({})
+  
+  _setLocation = () => this._getLocation().then( location =>
+    this.setState({
+      mapRegion:({...this.state.mapRegion,...location.coords}),
+      location,
+    })
+  )
 
-  _handleMapRegionChange = coords => this.setState(() => ({mapRegion:coords}))
+  handleMapRegionChange = coords => this.setState(() => ({mapRegion:coords}))
 
   getMapRegion = () => this.state.mapRegion
 
   toggleMap = state => this.setState(() => ({mapVisible: state}))
 
+  goToResume = text => {
+    this.setState(() => ({isDialogVisible:false}))
+    this.props.navigation.navigate('Resumen',{
+      location: {
+        ...this.props.location,
+        text,
+      }
+    })
+  }
+
   render() {
+    console.log(this.state.location)
 
     return (
-      <View style={styles.container}>
+      <View >
+        <Text style={styles.title}>Presione en el mapa para indicar su ubicación actual</Text>
         <MapView
-          style={{ alignSelf: 'stretch', height: 200 }}
+          style={styles.map}
           initialRegion={{...this.state.mapRegion}}
-          onRegionChangeComplete={this._handleMapRegionChange}
+          onRegionChange={this.handleMapRegionChange}
         >
+          {
+            this.state.location ? (
+              <MapView.Marker
+                coordinate={this.state.location.coords}
+                title="My Marker"
+                description="Some description"
+              />
+            ) : null
+          }
+        </MapView>
         {
           this.state.location ? (
-            <MapView.Marker
-              coordinate={this.state.location.coords}
-              title="My Marker"
-              description="Some description"
-            />
+            <View>
+              <Text>
+                Latitud: {this.state.location.coords.latitude}
+              </Text>
+              <Text>
+                Longitud: {this.state.location.coords.longitude}
+              </Text>
+            </View>
           ) : null
         }
-        </MapView>
+        {
+          this.state.location ?
+            <Button title="Confirmar" onPress={() => this.setState(() => ({isDialogVisible:true}))} />
+            : null
+        }
+        <DialogInput
+          isDialogVisible={this.state.isDialogVisible}
+          title={"Información adicional"}
+          message={"Ingrese informacion adicional que ayude a determinar su ubicación"}
+          submitInput={this.goToResume}
+          closeDialog={() => this.setState(() => ({isDialogVisible:false}))}
+        />
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    height: '100%',
-    width: '100%',
+  map: {
+    alignSelf: 'stretch',
+    height: 400,
+    margin: 10,
   },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#34495e',
-  },
+  title: {
+    fontSize: 20
+  }
 });
 
