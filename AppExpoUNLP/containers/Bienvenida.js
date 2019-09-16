@@ -10,7 +10,7 @@ class BienvenidaContainer extends Component {
         <Text style={styles.subtitleText}>Descripcion de lo que hace la aplicacion, ver que poner</Text>
         <View style={styles.comenzarButtonView}>
           <Button
-             color="#7cb342"
+            color="#7cb342"
             style={styles.comenzarButton}
             title='Comenzar'
             onPress={  () => this.props.navigation.navigate('Foto')}
@@ -34,7 +34,7 @@ const styles = {
     textAlign: "center",
     flex:1,
     margin: 20,
-    fontSize:25,
+    fontSize:20,
   },
   comenzarButtonView: {
     flex:2,

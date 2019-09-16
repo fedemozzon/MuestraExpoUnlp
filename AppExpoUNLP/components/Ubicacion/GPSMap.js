@@ -7,7 +7,7 @@ import * as Location from 'expo-location'
 export default class ManualMap extends Component {
   
   state = {
-    mapRegion: { latitude: -34.00000, longitude: -64.00000, latitudeDelta: 0.5, longitudeDelta: 0.5 },
+    mapRegion: { latitude: -34.90300, longitude: -57.9380000, latitudeDelta: 0.5, longitudeDelta: 0.5 },
     location: null,
     isDialogVisible: false,
   }
@@ -92,7 +92,7 @@ export default class ManualMap extends Component {
 const styles = StyleSheet.create({
   map: {
     alignSelf: 'stretch',
-    height: 400,
+    height: 350,
     margin: 10,
   },
   title: {
