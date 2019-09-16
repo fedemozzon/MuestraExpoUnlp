@@ -21,21 +21,21 @@ class ResumenContainer extends Component {
     
     return (
       <View style={styles.main}>
-        <Text style={styles.titleText}>Resumen</Text>
-        <Text style={styles.aditionalText}>Estás en:</Text>
-        <MapView style={styles.map}
-                 initialRegion={({...location.coords, latitudeDelta:0.5, longitudeDelta:0.5})}>
+        <Text style={styles.aditionalText}>Estás en: "{text}"</Text>
         {
-          location ? (
-            <MapView.Marker
-              coordinate={location.coords}
-              title="My Marker"
-              description="Some description"
-            />
+          location.coords ? (
+            <MapView style={styles.map}
+              initialRegion={({...location.coords, latitudeDelta:0.5, longitudeDelta:0.5})}>
+              <MapView.Marker
+                coordinate={location.coords}
+                title="My Marker"
+                description="Some description"
+              >
+              <Image source={imageSrc} style={{height: 35, width:35 }}/>
+              </MapView.Marker>
+            </MapView>
           ) : null
         }
-        </MapView>
-        <Text style={styles.locationText}>"{text}"</Text>
         <Text style={styles.aditionalText}>Y de este humor: </Text>
         <Image style={styles.image} source={imageSrc} />
         <View style={{flex:2, justifyContent: "center", alignItems: "center"}}>
