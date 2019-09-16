@@ -1,23 +1,20 @@
 import React, {Component} from 'react'
-import { Container, Header, Content, H1, H2, H3, Text, connectStyle , Root, Button, Body} from 'native-base'
+import { View, Text, Button } from 'react-native'
 
 class BienvenidaContainer extends Component {
 
   render() {
     return (
-      <Container>
-        <Content>
-          <Text style={styles.titleText}>Bienvenido</Text>
-          <Text style={styles.subtitleText}>Descripcion de lo que hace la aplicacion, ver que poner</Text>
-        </Content>
-        <Content >
-          <Body style={styles.comenzarButtonBody}>
-            <Button info style={{flex:1, justifyContent:"center", width:150}}>
-              <Text>Comenzar!</Text>
-            </Button>
-          </Body>
-        </Content>
-      </Container>
+      <View>
+        <Text style={styles.titleText}>Bienvenido</Text>
+        <Text style={styles.subtitleText}>Descripcion de lo que hace la aplicacion, ver que poner</Text>
+        <Button
+          info
+          style={{flex:1, justifyContent:"center", width:150}}
+          title='Comenzar'
+          onPress={  () => this.props.navigation.navigate('Ubicacion')}
+        />
+      </View>
     )
   }
 

@@ -1,4 +1,6 @@
 import AppNavigator from './Navigator'
 import { createAppContainer } from 'react-navigation'
 
-export default createAppContainer(AppNavigator)
+const App = createAppContainer(AppNavigator)
+
+export default App
