@@ -1,19 +1,21 @@
 import React, {Component} from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, Header } from 'react-native'
 
 class BienvenidaContainer extends Component {
 
   render() {
     return (
-      <View >
+      <View style={{flex:1, flexDirection:"column", backgroundColor: "#eceff1"}}>
         <Text style={styles.titleText}>Bienvenido</Text>
         <Text style={styles.subtitleText}>Descripcion de lo que hace la aplicacion, ver que poner</Text>
-        <Button
-          info
-          style={{flex:1, justifyContent:"center", width:150}}
-          title='Comenzar'
-          onPress={  () => this.props.navigation.navigate('Foto')}
-        />
+        <View style={styles.comenzarButtonView}>
+          <Button
+             color="#7cb342"
+            style={styles.comenzarButton}
+            title='Comenzar'
+            onPress={  () => this.props.navigation.navigate('Foto')}
+          />
+        </View>
       </View>
     )
   }
@@ -22,7 +24,7 @@ class BienvenidaContainer extends Component {
 
 const styles = {
   titleText: {
-    flex: 1,
+    flex:1,
     textAlign: "center",
     margin: 50,
     marginBottom: 0,
@@ -30,16 +32,16 @@ const styles = {
   },
   subtitleText: {
     textAlign: "center",
+    flex:1,
     margin: 20,
     fontSize:25,
   },
-  comenzarButtonBody: {
-    flex:1, 
-    justifyContent:"center"
+  comenzarButtonView: {
+    flex:2,
+    justifyContent: "center",
+    alignItems: "center"
   },
   comenzarButton: {
-    width: 115,
-    textAlign:"center"
   }
 };
 
