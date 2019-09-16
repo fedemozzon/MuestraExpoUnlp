@@ -9,27 +9,37 @@ const AppNavigator = createStackNavigator({
   Bienvenida: {
     screen: BienvenidaContainer,
     navigationOptions: () => ({
-      title: 'Bienvenida'
+      title: 'Bienvenida',
+      headerStyle:styles.header,
     }),
   },
   Foto: {
     screen: FotoContainer,
     navigationOptions: () => ({
-      title: 'Foto'
+      title: 'Foto',
+      headerStyle:styles.header,
     }),
   },
   Resumen: {
     screen: ResumenContainer,
     navigationOptions: () => ({
-      title: 'Resumen'
+      title: 'Resumen',
+      headerStyle:styles.header,
     }),
   },
   Ubicacion: {
     screen: UbicacionContainer,
     navigationOptions: () => ({
-      title: 'Ubicacion'
+      title: 'Ubicacion',
+      headerStyle:styles.header,
     }),
   },
 })
+
+const styles = {
+  header: {
+    backgroundColor: "#7cb342"
+  }
+};
 
 export default AppNavigator
