@@ -6,7 +6,7 @@ class BienvenidaContainer extends Component {
   render() {
     return (
       <View style={{flex:1, flexDirection:"column", backgroundColor: "#eceff1"}}>
-        <Text style={styles.titleText}>Bienvenide a 'Nombre'</Text>
+        <Text style={styles.titleText}>Bienvenide a 'Animap'</Text>
         <Text style={styles.subtitleText}>Contanos con una imagen como te sentís en la Expo</Text>
         <View style={styles.comenzarButtonView}>
           <Button
