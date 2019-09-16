@@ -42,18 +42,22 @@ export default class ManualMap extends Component {
 
   render() {
 
+    const {
+      location
+    } = this.state
+
     return (
       <View >
         <Text style={styles.title}>Confirme su ubicación actual</Text>
         <MapView
           style={styles.map}
-          initialRegion={{...this.state.mapRegion}}
-          onRegionChange={this.handleMapRegionChange}
+          region={({...this.state.mapRegion})}
+          onRegionChangeComplete={this.handleMapRegionChange}
         >
           {
-            this.state.location ? (
+            location ? (
               <MapView.Marker
-                coordinate={this.state.location.coords}
+                coordinate={location.coords}
                 title="My Marker"
                 description="Some description"
               />
@@ -61,19 +65,19 @@ export default class ManualMap extends Component {
           }
         </MapView>
         {
-          this.state.location ? (
+          location ? (
             <View>
               <Text>
-                Latitud: {this.state.location.coords.latitude}
+                Latitud: {location.coords.latitude}
               </Text>
               <Text>
-                Longitud: {this.state.location.coords.longitude}
+                Longitud: {location.coords.longitude}
               </Text>
             </View>
           ) : null
         }
         {
-          this.state.location ?
+          location ?
             <Button color="#7cb342" title="Confirmar" onPress={() => this.setState(() => ({isDialogVisible:true}))} />
             : null
         }
