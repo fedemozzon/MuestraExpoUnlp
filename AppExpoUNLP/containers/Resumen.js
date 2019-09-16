@@ -21,7 +21,7 @@ class ResumenContainer extends Component {
     return (
       <View style={styles.main}>
         <Text style={styles.titleText}>Resumen</Text>
-        <Text style={{textAlign: 'left'}}>Estás en:</Text>
+        <Text style={styles.aditionalText}>Estás en:</Text>
         <MapView style={styles.map}
                  initialRegion={({...location.coords, latitudeDelta:0.5, longitudeDelta:0.5})}>
         {
@@ -34,8 +34,8 @@ class ResumenContainer extends Component {
           ) : null
         }
         </MapView>
-        <Text>{text}</Text>
-        <Text style={{textAlign: 'left'}}>Y de este humor: </Text>
+        <Text style={styles.locationText}>"{text}"</Text>
+        <Text style={styles.aditionalText}>Y de este humor: </Text>
         <Image style={styles.image} source={imageSrc} />
       </View>
     )
@@ -52,10 +52,11 @@ const styles = {
     fontSize: 70
   },
   locationText:{
-  
+     textAlign:'center'
   },
   aditionalText:{
-
+    textAlign: 'left', 
+    fontWeight:'bold'
   },
   map: {
     alignSelf: 'stretch',
@@ -63,8 +64,8 @@ const styles = {
     margin: 20,
   },
   image: {
-    width: '50%',
-    height: '50%',
+    width: 90,
+    height: 90,
     alignSelf: 'center',
     borderRightWidth: 10,
   }

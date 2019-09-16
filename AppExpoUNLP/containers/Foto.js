@@ -20,20 +20,23 @@ class FotoContainer extends Component {
 
   setSource = (imageSrc) => this.setState(() => ({imageSrc}))
 
+  componentList = [
+    ({
+      permission:PermissionConstants.CAMERA,
+      connectionRequire:PermissionConstants.NONE,
+      component:(<CameraComponent setSource={this.setSource} />)
+    }),
+  ]
+
   render() {
     const {
       imageSrc,
     } = this.state
-
+    
     return (
       <View style={styles.container}>
         <PermissionAwareComponent
-          permissionComponentList={[
-            ({
-              permission:PermissionConstants.CAMERA,
-              component:(<CameraComponent setSource={this.setSource} />)
-            }),
-          ]}
+          permissionComponentList={this.componentList}
           defaultComponent={(<PictureComponent setSource={this.setSource} />)}
         />
         {
@@ -42,6 +45,7 @@ class FotoContainer extends Component {
         {(imageSrc) ?(
         <Button
           info
+          color="#7cb342"
           style={{flex:1, justifyContent:"center", width:150}}
           title='Siguiente'
           onPress={  () => this.props.navigation.navigate('Ubicacion',{imageSrc})}
@@ -59,8 +63,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width:'70%',
-    height:'70%',
+    width:90,
+    height:90,
+    marginBottom: 60,
   }
 })
 

@@ -70,7 +70,7 @@ export default class ManualMap extends Component {
         }
         {
           this.state.location ?
-            <Button title="Confirmar" onPress={() => this.setState(() => ({isDialogVisible:true}))} />
+            <Button color="#7cb342" title="Confirmar" onPress={() => this.setState(() => ({isDialogVisible:true}))} />
             : null
         }
         <DialogInput
