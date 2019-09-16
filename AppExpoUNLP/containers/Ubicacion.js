@@ -12,6 +12,7 @@ import {
 
 import GPSMap from '../components/Ubicacion/GPSMap'
 import ManualMap from '../components/Ubicacion/ManualMap'
+import LocationInput from '../components/Ubicacion/LocationInput'
 
 class UbicacionContainer extends Component {
 
@@ -32,7 +33,7 @@ class UbicacionContainer extends Component {
       <View>
         <PermissionAwareComponent
           permissionComponentList={this.componentList}
-          defaultComponent={(<Text>A</Text>)}
+          defaultComponent={(<LocationInput navigation={this.props.navigation} />)}
         />
       </View>
     )
