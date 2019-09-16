@@ -9,11 +9,7 @@
   },
   "dependencies": {
     "expo": "^34.0.1",
-<<<<<<< HEAD
-    "expo-camera": "~6.0.0",
-=======
     "expo-location": "^6.0.0",
->>>>>>> ubicacion
     "expo-permissions": "^6.0.0",
     "native-base": "^2.13.8",
     "react": "16.8.3",
