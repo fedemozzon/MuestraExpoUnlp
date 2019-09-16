@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {
   View,
-  Text
+  Text,
+  
 } from 'react-native'
 
 import {
@@ -18,11 +19,11 @@ class UbicacionContainer extends Component {
     ({
       permission:[PermissionConstants.LOCATION],
       connectionRequire:PermissionConstants.WIFI,
-      component:(<GPSMap />)
+      component:(<GPSMap navigation={this.props.navigation} />)
     }),
     ({
       connectionRequire:PermissionConstants.WIFI,
-      component:(<ManualMap />)
+      component:(<ManualMap navigation={this.props.navigation} />)
     }),
   ]
 
