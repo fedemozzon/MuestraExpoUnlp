@@ -61,8 +61,9 @@ const styles = {
     margin: 20,
   },
   image: {
-    width:'70%',
-    height:'70%',
+    width: '50%',
+    height: '50%',
+    alignSelf: 'center'
   }
 }
 export default ResumenContainer
