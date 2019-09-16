@@ -30,7 +30,8 @@ export default class ManualMap extends Component {
       location: {
         ...this.props.location,
         text,
-      }
+      },
+      imageSrc: navigation.getParam('imageSrc', null)
     })
   }
 
