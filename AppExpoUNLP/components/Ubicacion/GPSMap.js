@@ -47,7 +47,9 @@ export default class ManualMap extends Component {
     } = this.state
 
     return (
-      <View >
+      <View style={{marginTop:20,
+        flex:1,
+        flexDirection:"column"}}>
         <Text style={styles.title}>Confirme su ubicación actual</Text>
         <MapView
           style={styles.map}
@@ -66,7 +68,7 @@ export default class ManualMap extends Component {
         </MapView>
         {
           location ? (
-            <View>
+            <View style={{marginLeft:10}}>
               <Text>
                 Latitud: {location.coords.latitude}
               </Text>
@@ -78,7 +80,9 @@ export default class ManualMap extends Component {
         }
         {
           location ?
-            <Button color="#7cb342" title="Confirmar" onPress={() => this.setState(() => ({isDialogVisible:true}))} />
+            <View style={{flex:2, justifyContent: "center", alignItems: "center"}} >
+              <Button color="#7cb342" title="Confirmar" onPress={() => this.setState(() => ({isDialogVisible:true}))} />
+            </View>
             : null
         }
         <DialogInput
@@ -100,6 +104,8 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   title: {
+    marginTop:10,
+    marginLeft: 10,
     fontSize: 20
   }
 });
