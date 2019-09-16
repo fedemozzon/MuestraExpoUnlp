@@ -31,7 +31,7 @@ export default class ManualMap extends Component {
         ...this.props.location,
         text,
       },
-      imageSrc: navigation.getParam('imageSrc', null)
+      imageSrc: this.props.navigation.getParam('imageSrc', null)
     })
   }
 
@@ -39,7 +39,7 @@ export default class ManualMap extends Component {
 
     return (
       <View >
-        <Text style={styles.title}>Confirme su ubicación actual</Text>
+        <Text style={styles.title}>Presione en el mapa para indicar su ubicación actual</Text>
         <MapView
           onPress={()=> this._setLocation(this._getLocation(this.state.mapRegion))}
           style={styles.map}

@@ -2,18 +2,22 @@ import React, {Component} from 'react'
 import {
   View,
   Text,
+  Image,
 } from 'react-native'
 import MapView from 'react-native-maps'
+
 class ResumenContainer extends Component {
+
   state = {
     mapRegion: { latitude: -34.00000, longitude: -64.00000, latitudeDelta: 0.5, longitudeDelta: 0.5 },
     location: null,
   }
+
   render() {
-    const location = this.props.navigation.getParam("location", 'NO-LOCATION')
-    
+    const location = this.props.navigation.getParam('location', 'NO-LOCATION')
     const text = location.text
-    console.log(latitude)
+    const imageSrc = this.props.navigation.getParam('imageSrc', null)
+    
     return (
       <View style={styles.main}>
         <Text style={styles.titleText}>Resumen</Text>
@@ -29,7 +33,8 @@ class ResumenContainer extends Component {
           ) : null
         }
         </MapView>
-        <Text>{text}</Text>        
+        <Text>{text}</Text>
+        <Image style={styles.image} source={imageSrc} />
       </View>
     )
   }
@@ -54,6 +59,10 @@ const styles = {
     alignSelf: 'stretch',
     height: 200,
     margin: 20,
+  },
+  image: {
+    width:'70%',
+    height:'70%',
   }
 }
 export default ResumenContainer

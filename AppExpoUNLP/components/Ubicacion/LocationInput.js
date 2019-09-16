@@ -29,7 +29,8 @@ export default class LocationInput extends Component {
             <Button title='OK' onPress={() => this.props.navigation.navigate('Resumen',{
               location: {
                 text: this.state.text,
-              }
+              },
+              imageSrc: this.props.navigation.getParam('imageSrc', null)
             })} />
             : null
         }

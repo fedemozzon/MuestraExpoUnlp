@@ -35,16 +35,16 @@ export default class ManualMap extends Component {
       location: {
         ...this.state.location,
         text,
-      }
+      },
+      imageSrc: this.props.navigation.getParam('imageSrc', null)
     })
   }
 
   render() {
-    console.log(this.state.location)
 
     return (
       <View >
-        <Text style={styles.title}>Presione en el mapa para indicar su ubicación actual</Text>
+        <Text style={styles.title}>Confirme su ubicación actual</Text>
         <MapView
           style={styles.map}
           initialRegion={{...this.state.mapRegion}}
