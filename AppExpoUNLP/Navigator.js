@@ -16,7 +16,7 @@ const AppNavigator = createStackNavigator({
   Foto: {
     screen: FotoContainer,
     navigationOptions: () => ({
-      title: 'Foto',
+      title: 'Como te sentís',
       headerStyle:styles.header,
     }),
   },
