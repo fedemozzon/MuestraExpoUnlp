@@ -23,6 +23,7 @@ class UbicacionContainer extends Component {
       component:(<GPSMap navigation={this.props.navigation} />)
     }),
     ({
+      permission:undefined,
       connectionRequire:PermissionConstants.WIFI,
       component:(<ManualMap navigation={this.props.navigation} />)
     }),
