@@ -23,7 +23,7 @@ class FotoContainer extends Component {
   componentList = [
     ({
       permission:PermissionConstants.CAMERA,
-      connectionRequire:PermissionConstants.NONE,
+      connectionRequire:PermissionConstants.ANY,
       component:(<CameraComponent setSource={this.setSource} />)
     }),
   ]
