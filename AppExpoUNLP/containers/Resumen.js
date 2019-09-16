@@ -3,6 +3,7 @@ import {
   View,
   Text,
   Image,
+  Button
 } from 'react-native'
 import MapView from 'react-native-maps'
 
@@ -37,6 +38,9 @@ class ResumenContainer extends Component {
         }
         <Text style={styles.aditionalText}>Y de este humor: </Text>
         <Image style={styles.image} source={imageSrc} />
+        <View style={{flex:2, justifyContent: "center", alignItems: "center"}}>
+          <Button color="#7cb342" onPress={() => this.props.navigation.popToTop()} title="Finalizar"/>
+        </View>
       </View>
     )
   }
@@ -45,7 +49,13 @@ class ResumenContainer extends Component {
 const styles = {
   main:{
     marginTop:20,
-    margin:10,
+    flex:1,
+    flexDirection:"column"
+  },
+  titleText:{
+    flex:1,
+    textAlign:"center",
+    fontSize: 70
   },
   locationText:{
      textAlign:'center'
@@ -53,7 +63,8 @@ const styles = {
   aditionalText:{
     textAlign: 'left', 
     fontWeight:'bold',
-    fontSize: 20,
+    marginLeft: 10,
+    fontSize: 15
   },
   map: {
     alignSelf: 'stretch',
@@ -67,4 +78,5 @@ const styles = {
     borderRightWidth: 10,
   }
 }
+
 export default ResumenContainer

@@ -13,20 +13,24 @@ export default class LocationInput extends Component {
 
   render() {
     return(
-      <View>
+      <View style={{marginHorizontal:40, marginVertical:40}}>
         <TextInput
+          placeholderTextColor='#FAFAFA'
+          selectionColor='#EEEEEE'
           multiline
           onChangeText={text => this.setState(() => ({text}))}
           value={this.state.text}
           style={{
+            borderColor:'blue',
             backgroundColor: '#FFFFFF',
             borderBottomColor: '#000000',
             borderBottomWidth: 1,
+            marginBottom:30,
           }}
         />
         {
           this.state.text !== '' ?
-            <Button title='OK' onPress={() => this.props.navigation.navigate('Resumen',{
+            <Button color="#7cb342" title='OK' onPress={() => this.props.navigation.navigate('Resumen',{
               location: {
                 text: this.state.text,
               },
