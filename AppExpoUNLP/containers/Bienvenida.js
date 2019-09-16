@@ -12,7 +12,7 @@ class BienvenidaContainer extends Component {
           info
           style={{flex:1, justifyContent:"center", width:150}}
           title='Comenzar'
-          onPress={  () => this.props.navigation.navigate('Ubicacion')}
+          onPress={  () => this.props.navigation.navigate('Foto')}
         />
       </View>
     )
