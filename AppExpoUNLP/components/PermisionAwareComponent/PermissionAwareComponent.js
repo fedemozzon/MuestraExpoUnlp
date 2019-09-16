@@ -45,9 +45,9 @@ class PermissionAwareComponent extends Component {
       Array.isArray(permission) ?
         await Permissions.askAsync(...permission.map(each => permisionMap(each))) :
         await Permissions.askAsync(permisionMap(permission))
-      : 'granted'
+      : ({status:'granted'})
     const connection = await this.handleConnection(connectionRequire)
-    if (status !== 'denied' && connection) this.setState(() => ({componentToRender:(component)}))
+    if ((status === 'granted') && connection) this.setState(() => ({componentToRender:(component)}))
     return connection ? status : 'denied'
   }
 
