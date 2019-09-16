@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {
-  View,StyleSheet,Image
+  View,StyleSheet,Image,Button
 } from 'react-native'
 import {
   PermissionAware as PermissionAwareComponent,
@@ -39,6 +39,13 @@ class FotoContainer extends Component {
         {
           (imageSrc !== null) ? (<Image style={styles.image} source={imageSrc} />) : null
         }
+        {(imageSrc) ?(
+        <Button
+          info
+          style={{flex:1, justifyContent:"center", width:150}}
+          title='Siguiente'
+          onPress={  () => this.props.navigation.navigate('Ubicacion',{imageSrc})}
+        />): null }
       </View>
     );
   }
