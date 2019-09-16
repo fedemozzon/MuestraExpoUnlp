@@ -5,7 +5,7 @@ class BienvenidaContainer extends Component {
 
   render() {
     return (
-      <View>
+      <View >
         <Text style={styles.titleText}>Bienvenido</Text>
         <Text style={styles.subtitleText}>Descripcion de lo que hace la aplicacion, ver que poner</Text>
         <Button
@@ -31,7 +31,7 @@ const styles = {
   subtitleText: {
     textAlign: "center",
     margin: 20,
-    fontSize:20,
+    fontSize:25,
   },
   comenzarButtonBody: {
     flex:1, 
