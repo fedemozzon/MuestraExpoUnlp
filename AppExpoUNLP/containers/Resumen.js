@@ -30,7 +30,10 @@ class ResumenContainer extends Component {
               coordinate={location.coords}
               title="My Marker"
               description="Some description"
-            />
+            >
+            <Image source={imageSrc} style={{height: 35, width:35 }}/>
+            </MapView.Marker>
+
           ) : null
         }
         </MapView>
