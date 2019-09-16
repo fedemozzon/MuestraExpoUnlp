@@ -21,6 +21,7 @@ class ResumenContainer extends Component {
     return (
       <View style={styles.main}>
         <Text style={styles.titleText}>Resumen</Text>
+        <Text style={{textAlign: 'left'}}>Estás en:</Text>
         <MapView style={styles.map}
                  initialRegion={({...location.coords, latitudeDelta:0.5, longitudeDelta:0.5})}>
         {
@@ -34,6 +35,7 @@ class ResumenContainer extends Component {
         }
         </MapView>
         <Text>{text}</Text>
+        <Text style={{textAlign: 'left'}}>Y de este humor: </Text>
         <Image style={styles.image} source={imageSrc} />
       </View>
     )
@@ -63,7 +65,8 @@ const styles = {
   image: {
     width: '50%',
     height: '50%',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    borderRightWidth: 10,
   }
 }
 export default ResumenContainer
