@@ -16,10 +16,10 @@ class BienvenidaContainer extends Component {
           />
         </View>
         <View style={styles.logosView}>
-          <Image style={styles.logoImage} source={require('../assets/logos/logo-facultad.png')}/>
-          <Image style={styles.logoImage} source={require('../assets/logos/logo-unlp.png')}/>
-          <Image style={styles.logoImage} source={require('../assets/logos/logo-lifia.png')}/>
-          <Image style={styles.logoImage} source={require('../assets/logos/logo-cic.png')}/>
+          <Image style={styles.logoImageInfo} source={require('../assets/logos/logo-facultad.png')}/>
+          <Image style={styles.logoImageUNLP} source={require('../assets/logos/logo-unlp.png')}/>
+          <Image style={styles.logoImageLifia} source={require('../assets/logos/logo-lifia.png')}/>
+          <Image style={styles.logoImageCIC} source={require('../assets/logos/logo-cic.png')}/>
         </View>
       </View>
     )
@@ -52,10 +52,22 @@ const styles = {
     justifyContent: "space-around",
     //marginBottom: -65
   },
-  logoImage: {
-    height: "auto",
+  logoImageCIC: {
+    height: "60%",
     width: "23%",
-  }
+  },
+logoImageInfo: {
+  height: "25%",
+  width: "24%",
+},
+logoImageLifia: {
+  height: "25%",
+  width: "23%",
+},
+logoImageUNLP: {
+  height: "40%",
+  width: "25%",
+},
 };
 
 export default BienvenidaContainer
