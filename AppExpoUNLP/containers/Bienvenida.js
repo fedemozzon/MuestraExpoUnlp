@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { View, Text, Button, Header } from 'react-native'
+import { View, Text, Button, Header, Image } from 'react-native'
 
 class BienvenidaContainer extends Component {
 
@@ -11,10 +11,15 @@ class BienvenidaContainer extends Component {
         <View style={styles.comenzarButtonView}>
           <Button
             color="#7cb342"
-            style={styles.comenzarButton}
             title='Comenzar'
             onPress={  () => this.props.navigation.navigate('Foto')}
           />
+        </View>
+        <View style={styles.logosView}>
+          <Image style={styles.logoImage} source={require('../assets/logos/logo-facultad.png')}/>
+          <Image style={styles.logoImage} source={require('../assets/logos/logo-unlp.png')}/>
+          <Image style={styles.logoImage} source={require('../assets/logos/logo-lifia.png')}/>
+          <Image style={styles.logoImage} source={require('../assets/logos/logo-cic.png')}/>
         </View>
       </View>
     )
@@ -37,11 +42,19 @@ const styles = {
     fontSize:20,
   },
   comenzarButtonView: {
-    flex:2,
+    flex:1,
     justifyContent: "center",
     alignItems: "center"
   },
-  comenzarButton: {
+  logosView: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    //marginBottom: -65
+  },
+  logoImage: {
+    height: "auto",
+    width: "23%",
   }
 };
 
