@@ -2028,6 +2028,11 @@ expo-asset@~6.0.0:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
+expo-battery@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/expo-battery/-/expo-battery-1.0.1.tgz#e54324a9e1c53e2a74a84f7a37ed0e0bc4258580"
+  integrity sha512-jCHCGlVQ62P5ixaC76OCSlaVz1brGkKk+BOM66aD0dUySPgbpWSS4F5NvQRFHLNt8pePFnrvJYTkB9Pr9v17qg==
+
 expo-camera@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-6.0.0.tgz#74db78874f87de7adcd63db0e96591c331fefd28"
