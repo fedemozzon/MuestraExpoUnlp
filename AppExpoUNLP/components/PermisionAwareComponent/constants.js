@@ -10,6 +10,7 @@ export const NOTIFICATIONS = '_notifications'
 export const USER_FACING_NOTIFICATIONS = '_user_facing_notifications'
 export const LOCATION = '_location'
 
+
 //Constantes de conexion a internet
 export const WIFI = 'wifi'
 export const ANY = 'any'

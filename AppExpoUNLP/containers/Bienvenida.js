@@ -12,7 +12,7 @@ class BienvenidaContainer extends Component {
           <Button
             color="#7cb342"
             title='Comenzar'
-            onPress={  () => this.props.navigation.navigate('Foto')}
+            onPress={  () => this.props.navigation.navigate('Bateria')}
           />
         </View>
         <View style={styles.logosView}>

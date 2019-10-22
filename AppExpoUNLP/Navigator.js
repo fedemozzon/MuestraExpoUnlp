@@ -4,6 +4,7 @@ import BienvenidaContainer from './containers/Bienvenida'
 import FotoContainer from './containers/Foto'
 import ResumenContainer from './containers/Resumen'
 import UbicacionContainer from './containers/Ubicacion'
+import BateriaContainer from './containers/Bateria'
 
 const AppNavigator = createStackNavigator({
   Bienvenida: {
@@ -34,7 +35,15 @@ const AppNavigator = createStackNavigator({
       headerStyle:styles.header,
     }),
   },
-})
+  Bateria: {
+      screen: BateriaContainer,
+      navigationOptions: () => ({
+        title: 'Estado de la bateria',
+        headerStyle:styles.header,
+      }),
+    },
+  })
+
 
 const styles = {
   header: {
