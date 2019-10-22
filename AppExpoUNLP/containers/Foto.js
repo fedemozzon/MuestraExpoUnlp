@@ -23,8 +23,7 @@ class FotoContainer extends Component {
   componentList = [
     ({
       permission:PermissionConstants.CAMERA,
-      connectionRequire:PermissionConstants.ANY,
-      battteryLevelRequire: -1,
+      battteryLevelRequire:PermissionConstants.NO_POWER_SAVER,
       component:(<CameraComponent setSource={this.setSource} />)
     }),
   ]

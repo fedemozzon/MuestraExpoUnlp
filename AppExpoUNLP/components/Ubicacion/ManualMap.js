@@ -26,7 +26,7 @@ export default class ManualMap extends Component {
 
   goToResume = text => {
     this.setState(() => ({isDialogVisible:false}))
-    this.props.navigation.navigate('Bateria',{
+    this.props.navigation.navigate('Resumen',{
       location: {
         text: this.state.text,
       },

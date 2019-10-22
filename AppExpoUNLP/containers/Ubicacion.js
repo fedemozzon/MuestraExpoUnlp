@@ -20,13 +20,13 @@ class UbicacionContainer extends Component {
     ({
       permission:[PermissionConstants.LOCATION],
       connectionRequire:PermissionConstants.WIFI,
-      battteryLevelRequire: -1,
+      battteryLevelRequire: PermissionConstants.NO_POWER_SAVER,
       component:(<GPSMap navigation={this.props.navigation} />)
     }),
     ({
       permission:undefined,
       connectionRequire:PermissionConstants.WIFI,
-      battteryLevelRequire: -1,
+      battteryLevelRequire: PermissionConstants.NO_POWER_SAVER,
       component:(<ManualMap navigation={this.props.navigation} />)
     }),
   ]

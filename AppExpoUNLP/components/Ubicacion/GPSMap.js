@@ -31,7 +31,7 @@ export default class ManualMap extends Component {
 
   goToResume = text => {
     this.setState(() => ({isDialogVisible:false}))
-    this.props.navigation.navigate('Bateria',{
+    this.props.navigation.navigate('Resumen',{
       location: {
         text: this.state.text,
       },
@@ -46,9 +46,7 @@ export default class ManualMap extends Component {
     } = this.state
 
     return (
-      <View style={{marginTop:20,
-        flex:1,
-        flexDirection:"column"}}>
+      <View style={{marginTop:20}}>
         <Text style={styles.title}>Confirme su ubicación actual</Text>
         <MapView
           style={styles.map}
@@ -74,15 +72,9 @@ export default class ManualMap extends Component {
               <Text>
                 Longitud: {location.coords.longitude}
               </Text>
-            </View>
-          ) : null
-        }
-        {
-          location ?
-            <View style={{flex:2, justifyContent: "center", alignItems: "center"}} >
               <Button color="#7cb342" title="Confirmar" onPress={() => this.setState(() => ({isDialogVisible:true}))} />
             </View>
-            : null
+          ) : null
         }
         <DialogInput
           isDialogVisible={this.state.isDialogVisible}

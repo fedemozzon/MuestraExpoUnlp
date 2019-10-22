@@ -30,7 +30,7 @@ export default class LocationInput extends Component {
         />
         {
           this.state.text !== '' ?
-            <Button color="#7cb342" title='OK' onPress={() => this.props.navigation.navigate('Bateria',{
+            <Button color="#7cb342" title='OK' onPress={() => this.props.navigation.navigate('Resumen',{
               location: {
                 text: this.state.text,
               },

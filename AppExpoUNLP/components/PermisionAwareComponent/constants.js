@@ -21,6 +21,9 @@ export const CELLULAR = {
 }
 export const NONE = 'none'
 
+//Constantes de estado de bateria
+export const NO_POWER_SAVER = 'no_power_saver'
+
 export default {
   CAMERA,
   AUDIO_RECORDING,
@@ -36,4 +39,5 @@ export default {
   CELLULAR,
   NONE,
   ANY,
+  NO_POWER_SAVER,
 }
