@@ -51,13 +51,15 @@ class PermissionAwareComponent extends Component {
   }
   
   async handleComponentEvaluation({permission,connectionRequire,battteryLevelRequire, component }) {
+    const sufficientBattery = await this.handleBattery(battteryLevelRequire)
+    if(sufficientBattery){
     const { status } = permission !== undefined ? 
       Array.isArray(permission) ?
         await Permissions.askAsync(...permission.map(each => permisionMap(each))) :
         await Permissions.askAsync(permisionMap(permission))
       : ({status:'granted'})
+    }
     const connection = await this.handleConnection(connectionRequire)
-    const sufficientBattery = await this.handleBattery(battteryLevelRequire)
     if ((status === 'granted') && connection && sufficientBattery) this.setState(() => ({componentToRender:(component)}))
     return connection ? status : 'denied'
   }
