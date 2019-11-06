@@ -33,7 +33,8 @@ export default class ManualMap extends Component {
     this.setState(() => ({isDialogVisible:false}))
     this.props.navigation.navigate('Resumen',{
       location: {
-        text: this.state.text,
+        coords:this.state.location.coords,
+        text: text,
       },
       imageSrc: this.props.navigation.getParam('imageSrc', null)
     })

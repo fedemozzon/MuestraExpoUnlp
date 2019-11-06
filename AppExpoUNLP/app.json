@@ -23,7 +23,12 @@
       "**/*"
     ],
     "android": {
-      "package": "com.lifia.animap"
+      "package": "com.lifia.animap",
+      "config": {
+        "googleMaps":{
+          "apiKey":"AIzaSyCDEvMw8KQB94PrCds0jqreLR-fO2tWd1E"
+        }
+      }
     }
   }
 }

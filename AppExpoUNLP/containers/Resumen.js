@@ -18,7 +18,7 @@ class ResumenContainer extends Component {
     const location = this.props.navigation.getParam('location', 'NO-LOCATION')
     const text = location.text
     const imageSrc = this.props.navigation.getParam('imageSrc', null)
-    
+    console.log(location)
     return (
       <View style={styles.main}>
         <Text style={styles.aditionalText}>Estás en: "{text}"</Text>
